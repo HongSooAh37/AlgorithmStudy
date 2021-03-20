@@ -17,10 +17,80 @@ public class nineteenth {
 		//1712(손익분기점)
 		//answer_1712();
 		
+		//2292(벌집)
+		//answer_2292();
 		
+		/**
+		 * 다시 복습하기
+		 * */
+		//1193(분수찾기)  
+		//answer_1193();
+		
+		//2869(달팽이는 올라가고 싶다)
+		answer_2869();
 	}
 
 	
+	private static void answer_2869() throws IOException {
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		int A = Integer.parseInt(st.nextToken());
+		int B = Integer.parseInt(st.nextToken());
+		int V = Integer.parseInt(st.nextToken());
+		
+		int value = (V-B)/(A-B);
+		
+		if((V-B)%(A-B) ==0 ) {
+			System.out.print(value);
+		}else {
+			value++;
+			System.out.print(value);
+		}
+	}
+
+
+	private static void answer_1193() throws NumberFormatException, IOException {
+		int num = Integer.parseInt(br.readLine());
+		
+		int cross = 1, preSum = 0;
+		
+		
+		while(true) {
+			if(num <= cross + preSum) {
+				
+				if(cross % 2 == 0) {
+					System.out.println( (num-preSum)+"/"+(cross-(num-preSum-1)) );
+					break;
+				}else {
+					System.out.println( (cross -(num-preSum-1)) +"/"+(num-preSum) );
+					break;
+				}
+				
+			}else {
+				preSum += cross;
+				cross++;
+			}
+		}
+	}
+
+
+	private static void answer_2292() throws NumberFormatException, IOException {
+		int cnt = Integer.parseInt(br.readLine());
+		
+		int count = 0;
+		int start = 2;
+		
+		if(cnt == 1) {
+			count = 1;
+		}else {
+			while(start <= cnt) { 
+				start = start + (count*6);
+				count++;
+			}
+		}
+		System.out.println(count);
+	}
+
+
 	private static void answer_1712() throws IOException {
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 		
