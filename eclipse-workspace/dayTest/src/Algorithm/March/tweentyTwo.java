@@ -32,9 +32,9 @@ public class tweentyTwo {
 			int y = Integer.parseInt(st.nextToken());
 			
 			int distance = y-x;
-			int max = (int)Math.sqrt(distance); //제곱근 구하기
+			int max = (int)Math.sqrt(distance); //제곱근 구하기 => 정수형
 			
-			if(max == Math.sqrt(distance)) {
+			if(max == Math.sqrt(distance)) { //정수형 == 소수점형
 				sb.append(max*2-1).append('\n');
 			}else if(distance <= max*max+max) {
 				sb.append(max*2).append('\n');
